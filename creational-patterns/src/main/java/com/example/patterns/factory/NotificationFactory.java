@@ -19,7 +19,21 @@ public class NotificationFactory {
         // 3. Any other type: throw new IllegalArgumentException("Unknown type: " + type).
         //
         // Tip: a switch or an if / else if chain both work.
-
-        return null; // TEMPORARY - delete this line
+        if(type == null){
+            throw new IllegalArgumentException("Type is required");
+        }
+        String lowercaseType = type.toLowerCase();
+        if(lowercaseType.equals("email")){
+            return new EmailNotification();
+        }
+        else if(lowercaseType.equals("sms")){
+            return new SmsNotification();
+        }
+        else if (lowercaseType.equals("push")) {
+            return new PushNotification();
+        }
+        else{
+            throw  new IllegalArgumentException("Unknown type: " + type);
+        }
     }
 }
