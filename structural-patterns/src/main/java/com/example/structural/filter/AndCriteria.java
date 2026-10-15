@@ -24,7 +24,7 @@ public class AndCriteria implements Criteria {
         // 1. Filter the people with the first rule:   first.meetCriteria(people)
         // 2. Filter THAT result with the second rule: second.meetCriteria(...)
         // 3. Return the final list.
-
-        return people;              // TEMPORARY - delete this line
+        List<Person> firstCrit =  first.meetCriteria(people);
+        return second.meetCriteria(firstCrit);
     }
 }

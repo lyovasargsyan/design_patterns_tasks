@@ -12,6 +12,6 @@ public class GreenColor implements Color {
     public String fill() {
         // TODO: return the text "green".
 
-        return "";          // TEMPORARY - delete this line
+        return "green";
     }
 }
