@@ -9,7 +9,6 @@ public class BlackFridayDiscount implements Discount {
     @Override
     public int apply(int priceInCents) {
         // TODO: return the price minus 30 percent of the price.
-
-        return priceInCents;    // TEMPORARY - delete this line
+        return (int) ( priceInCents * 0.7);
     }
 }

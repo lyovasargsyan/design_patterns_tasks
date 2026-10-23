@@ -9,7 +9,6 @@ public class VipDiscount implements Discount {
     @Override
     public int apply(int priceInCents) {
         // TODO: return the price minus 20 percent of the price. Read MemberDiscount.java first.
-
-        return priceInCents;    // TEMPORARY - delete this line
+        return (int) (priceInCents * 0.8);
     }
 }

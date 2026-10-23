@@ -17,10 +17,11 @@ import java.util.List;
  */
 public class NotificationService {
 
-    private final EmailSender sender = new EmailSender();   // TEMPORARY - must be:  private final MessageSender sender;
+    private final MessageSender sender;   // TEMPORARY - must be:  private final MessageSender sender;
 
     public NotificationService(MessageSender sender) {
         // TODO: save the sender that was given.
+        this.sender = sender;
     }
 
     /** Sends the text to one user. Returns what the sender returned. */
@@ -31,7 +32,10 @@ public class NotificationService {
     /** Sends the same text to every user, in order. Returns the results, in the same order. */
     public List<String> notifyUsers(List<String> users, String text) {
         // TODO: make a new list, call notifyUser for every user, add the result, return the list.
-
-        return new ArrayList<>();   // TEMPORARY - delete this line
+        ArrayList<String> notifiedUsers = new ArrayList<>();
+        for(String user: users){
+            notifiedUsers.add(notifyUser(user, text));
+        }
+        return notifiedUsers;
     }
 }
